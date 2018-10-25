@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
@@ -35,7 +36,7 @@ namespace Amaris.ETL.RabbitMQ
         {
             return RunLongTask(() =>
             {
-                var subscriptionId = Guid.NewGuid().ToString();
+                var subscriptionId = GetSubscriptionId();
                 _bus.Subscribe(subscriptionId, (TInput input) =>
                 {
                     var result = transformer.Transform(input);
@@ -48,7 +49,7 @@ namespace Amaris.ETL.RabbitMQ
         {
             return RunLongTask(() =>
             {
-                var subscriptionId = Guid.NewGuid().ToString();
+                var subscriptionId = GetSubscriptionId();
                 var buffer = new ConcurrentQueue<TInput>();
                 _bus.Subscribe(subscriptionId, (TInput input) =>
                 {
@@ -77,7 +78,7 @@ namespace Amaris.ETL.RabbitMQ
         {
             return RunLongTask(() =>
             {
-                var subscriptionId = Guid.NewGuid().ToString();
+                var subscriptionId = GetSubscriptionId();
                 _bus.Subscribe(subscriptionId, (TOutput output) => { loader.Load(output); });
             });
         }
@@ -90,6 +91,10 @@ namespace Amaris.ETL.RabbitMQ
             return task;
         }
 
+        private static string GetSubscriptionId()
+        {
+            return "";
+        }
         public void Dispose()
         {
             _bus?.Dispose();
