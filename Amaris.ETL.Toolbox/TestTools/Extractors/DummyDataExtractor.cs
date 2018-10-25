@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using Amaris.ETL.Abstract;
-using Amaris.ETL.Test.Models;
+using Amaris.ETL.Toolbox.TestTools.Models;
 
-namespace Amaris.ETL.Test.ETL
+namespace Amaris.ETL.Toolbox.TestTools.Extractors
 {
-    public class Extractor : IExtractor<Cat>
+    public class DummyDataExtractor : IExtractor<Cat>
     {
         public IEnumerable<Cat> Extract(CancellationToken token)
         {
@@ -19,8 +19,8 @@ namespace Amaris.ETL.Test.ETL
 
                 yield return new Cat
                 {
-                   Name = names[rnd.Next(names.Length)],
-                   Color =  colors[rnd.Next(colors.Length)]
+                    Name = names[rnd.Next(names.Length)],
+                    Color =  colors[rnd.Next(colors.Length)]
                 };
             }
         }

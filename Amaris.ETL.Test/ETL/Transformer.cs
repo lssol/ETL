@@ -1,5 +1,5 @@
 ﻿using Amaris.ETL.Abstract;
-using Amaris.ETL.Test.Models;
+using Amaris.ETL.Toolbox.TestTools.Models;
 
 namespace Amaris.ETL.Test.ETL
 {

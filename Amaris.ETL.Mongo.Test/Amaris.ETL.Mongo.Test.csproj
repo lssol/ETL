@@ -6,6 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Amaris.ETL.Mongo\Amaris.ETL.Mongo.csproj" />
       <ProjectReference Include="..\Amaris.ETL.RabbitMQ\Amaris.ETL.RabbitMQ.csproj" />
       <ProjectReference Include="..\Amaris.ETL.Toolbox\Amaris.ETL.Toolbox.csproj" />
     </ItemGroup>

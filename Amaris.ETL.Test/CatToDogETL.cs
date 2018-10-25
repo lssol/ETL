@@ -3,11 +3,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using Amaris.ETL.RabbitMQ;
 using Amaris.ETL.Test.ETL;
-using Amaris.ETL.Test.Models;
+using Amaris.ETL.Toolbox.Loaders;
+using Amaris.ETL.Toolbox.TestTools.Extractors;
+using Amaris.ETL.Toolbox.TestTools.Models;
 
 namespace Amaris.ETL.Test
 {
-    public static class Logic
+    public static class CatToDogETL
     {
         public static void RunETL(CancellationToken token, bool bulk = false)
         {
@@ -15,9 +17,9 @@ namespace Amaris.ETL.Test
             {
                 var tasks = new List<Task>
                 {
-                    pipeline.Run(new Extractor(), token),
+                    pipeline.Run(new DummyDataExtractor(), token),
                     bulk ? pipeline.Run(new BulkTransformer(), token) : pipeline.Run(new Transformer(), token),
-                    pipeline.Run(new Loader(), token)
+                    pipeline.Run(new ConsoleLoader<Dog>(), token)
                 };
 
                 tasks.ForEach(t => t.Wait());

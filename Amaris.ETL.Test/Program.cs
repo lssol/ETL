@@ -11,7 +11,7 @@ namespace Amaris.ETL.Test
             var cancellationTokenSource = new CancellationTokenSource();
             
             Console.WriteLine("Launching the ETL");
-            var task = Task.Run(() => Logic.RunETL(cancellationTokenSource.Token, true));
+            var task = Task.Run(() => CatToDogETL.RunETL(cancellationTokenSource.Token, true));
 
             Console.ReadKey();
 

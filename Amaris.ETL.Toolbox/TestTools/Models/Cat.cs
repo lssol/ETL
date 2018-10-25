@@ -1,4 +1,4 @@
-namespace Amaris.ETL.Test.Models
+namespace Amaris.ETL.Toolbox.TestTools.Models
 {
     public class Cat
     {
