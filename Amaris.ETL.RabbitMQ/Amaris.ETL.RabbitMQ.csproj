@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Amaris.ETL.Abstract\Amaris.ETL.Abstract.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="EasyNetQ" Version="3.3.2" />
+      <PackageReference Include="NLog" Version="4.5.10" />
+    </ItemGroup>
+
+</Project>

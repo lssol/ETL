@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amaris.ETL.Abstract", "Amaris.ETL.Abstract\Amaris.ETL.Abstract.csproj", "{3DE35B07-FDA3-4540-8AC7-C185D63DB5D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amaris.ETL.RabbitMQ", "Amaris.ETL.RabbitMQ\Amaris.ETL.RabbitMQ.csproj", "{6D0B5E25-4B15-4303-BCEC-E04701E19882}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amaris.ETL.Test", "Amaris.ETL.Test\Amaris.ETL.Test.csproj", "{51E7469C-C7DF-4C70-9FBF-E53BED7124EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amaris.ETL.SQL", "Amaris.ETL.SQL\Amaris.ETL.SQL.csproj", "{4F258512-AE47-419D-90F2-A9BFC4DF2936}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DE35B07-FDA3-4540-8AC7-C185D63DB5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DE35B07-FDA3-4540-8AC7-C185D63DB5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DE35B07-FDA3-4540-8AC7-C185D63DB5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DE35B07-FDA3-4540-8AC7-C185D63DB5D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D0B5E25-4B15-4303-BCEC-E04701E19882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0B5E25-4B15-4303-BCEC-E04701E19882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D0B5E25-4B15-4303-BCEC-E04701E19882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D0B5E25-4B15-4303-BCEC-E04701E19882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E7469C-C7DF-4C70-9FBF-E53BED7124EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E7469C-C7DF-4C70-9FBF-E53BED7124EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E7469C-C7DF-4C70-9FBF-E53BED7124EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E7469C-C7DF-4C70-9FBF-E53BED7124EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F258512-AE47-419D-90F2-A9BFC4DF2936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F258512-AE47-419D-90F2-A9BFC4DF2936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F258512-AE47-419D-90F2-A9BFC4DF2936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F258512-AE47-419D-90F2-A9BFC4DF2936}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
