@@ -1,4 +1,6 @@
-﻿namespace Amaris.ETL.Abstract
+﻿using System;
+
+namespace Amaris.ETL.Abstract
 {
     public interface ILoader<TOutput> where TOutput : class
     {
