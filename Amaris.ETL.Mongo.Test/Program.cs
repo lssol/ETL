@@ -26,7 +26,7 @@ namespace Amaris.ETL.Mongo.Test
                 {
                     sp
                         .AddHostedService<CatToDogToMongoETL>()
-                        .Configure<MongoOptions>(context.Configuration.GetSection("ETL.Mongo"))
+                        .Configure<MongoOptions>(context.Configuration.GetSection("ETL.Loader.Mongo"))
                         .Configure<RabbitMQSettings>(context.Configuration.GetSection("ETL.RabbitMQ"))
                         .AddSingleton((s) => new RabbitMQPipeline<Cat, Dog>(s.GetService<IOptions<RabbitMQSettings>>().Value))
                         .AddSingleton((s) => new MongoLoader<Dog>(s.GetService<IOptions<MongoOptions>>().Value))

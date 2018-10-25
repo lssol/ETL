@@ -28,7 +28,8 @@ namespace Amaris.ETL.Toolbox
 
         public Task Run(Action<IEnumerable<T>> sendBatch)
         {
-            if (!BufferProcessor.IsCompleted)
+            
+            if (!BufferProcessor?.IsCompleted ?? false)
                 return BufferProcessor;
             return Task.Run(() =>
             {
