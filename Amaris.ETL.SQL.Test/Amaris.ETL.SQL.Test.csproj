@@ -13,6 +13,7 @@
       <ProjectReference Include="..\Amaris.ETL.RabbitMQ\Amaris.ETL.RabbitMQ.csproj" />
       <ProjectReference Include="..\Amaris.ETL.SQL\Amaris.ETL.SQL.csproj" />
       <ProjectReference Include="..\Amaris.ETL.Toolbox\Amaris.ETL.Toolbox.csproj" />
+      <ProjectReference Include="..\Amaris.Service\Amaris.Service.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amaris.ETL.Mongo.Test", "Am
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amaris.ETL.DocBinariesToRnD", "Amaris.ETL.DocBinariesToRnD\Amaris.ETL.DocBinariesToRnD.csproj", "{DA744AAD-C823-4795-9EA1-F609FEFB6503}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amaris.Service", "Amaris.Service\Amaris.Service.csproj", "{CF5224DF-690B-469E-BA49-2DAE1F9DAA07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +62,9 @@ Global
 		{DA744AAD-C823-4795-9EA1-F609FEFB6503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA744AAD-C823-4795-9EA1-F609FEFB6503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA744AAD-C823-4795-9EA1-F609FEFB6503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF5224DF-690B-469E-BA49-2DAE1F9DAA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF5224DF-690B-469E-BA49-2DAE1F9DAA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF5224DF-690B-469E-BA49-2DAE1F9DAA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF5224DF-690B-469E-BA49-2DAE1F9DAA07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

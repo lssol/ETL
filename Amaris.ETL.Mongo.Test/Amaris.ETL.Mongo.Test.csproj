@@ -10,6 +10,7 @@
     <ProjectReference Include="..\Amaris.ETL.Mongo\Amaris.ETL.Mongo.csproj" />
     <ProjectReference Include="..\Amaris.ETL.RabbitMQ\Amaris.ETL.RabbitMQ.csproj" />
     <ProjectReference Include="..\Amaris.ETL.Toolbox\Amaris.ETL.Toolbox.csproj" />
+    <ProjectReference Include="..\Amaris.Service\Amaris.Service.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="appsettings.Development.json">
