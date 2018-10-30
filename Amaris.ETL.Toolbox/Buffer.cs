@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using NLog;
 
 namespace Amaris.ETL.Toolbox
 {
@@ -28,10 +29,9 @@ namespace Amaris.ETL.Toolbox
 
         public Task Run(Action<IEnumerable<T>> sendBatch)
         {
-            
             if (!BufferProcessor?.IsCompleted ?? false)
                 return BufferProcessor;
-            return Task.Run(() =>
+            return BufferProcessor = Task.Run(() =>
             {
                 while (true)
                 {
@@ -43,10 +43,19 @@ namespace Amaris.ETL.Toolbox
                         toPublish.Add(item);
                     }
 
-                    if (toPublish.Any())
-                        sendBatch(toPublish);
-                    else
+                    if (!toPublish.Any())
                         break;
+
+                    try
+                    {
+                        sendBatch(toPublish);
+                    }
+                    catch (Exception e)
+                    {
+                        LogManager.GetCurrentClassLogger().Error(e, "The buffer crashed when attempting to send the batch");
+                        throw;
+                    }
+
                     Thread.Sleep(_period);
                 }
             });

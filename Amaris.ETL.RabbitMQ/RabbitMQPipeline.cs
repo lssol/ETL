@@ -25,7 +25,7 @@ namespace Amaris.ETL.RabbitMQ
 
         public Task Run(IExtractor<TInput> extractor, CancellationToken token)
         {
-            return RunLongTask(() =>
+            return Task.Run(() =>
             {
                 foreach (var extracted in extractor.Extract(token))
                     _bus.Publish(extracted);
@@ -34,7 +34,8 @@ namespace Amaris.ETL.RabbitMQ
 
         public Task Run(ITransformer<TInput, TOutput> transformer, CancellationToken token)
         {
-            return RunLongTask(() =>
+            ThrowIfTInputEqualsTOutput();
+            return Task.Run(() =>
             {
                 var subscriptionId = GetSubscriptionId();
                 _bus.Subscribe(subscriptionId, (TInput input) =>
@@ -47,7 +48,8 @@ namespace Amaris.ETL.RabbitMQ
 
         public Task Run(IBulkTransformer<TInput, TOutput> transformer, CancellationToken token)
         {
-            return RunLongTask(() =>
+            ThrowIfTInputEqualsTOutput();
+            return Task.Run(() =>
             {
                 var subscriptionId = GetSubscriptionId();
                 var buffer = new ConcurrentQueue<TInput>();
@@ -76,25 +78,24 @@ namespace Amaris.ETL.RabbitMQ
 
         public Task Run(ILoader<TOutput> loader, CancellationToken token)
         {
-            return RunLongTask(() =>
+            return Task.Run(() =>
             {
                 var subscriptionId = GetSubscriptionId();
                 _bus.Subscribe(subscriptionId, (TOutput output) => { loader.Load(output); });
             });
         }
 
-        private static Task RunLongTask(Action action)
+        private static void ThrowIfTInputEqualsTOutput()
         {
-            var task = new Task(action, TaskCreationOptions.LongRunning);
-            task.Start();
-            
-            return task;
+            if (typeof(TInput) == typeof(TOutput))
+                throw new Exception("If TInput = TOutput, you cannot use a transformer. Make two classes.");
         }
 
         private static string GetSubscriptionId()
         {
             return "";
         }
+        
         public void Dispose()
         {
             _bus?.Dispose();

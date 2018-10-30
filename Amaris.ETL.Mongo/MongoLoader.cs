@@ -9,11 +9,11 @@ namespace Amaris.ETL.Mongo
 {
     public class MongoLoader<T> : ILoader<T> where T : class
     {
-        private readonly MongoOptions  _options;
+        private readonly MongoLoaderOptions  _options;
         private readonly IMongoCollection<T> _collection;
         private readonly Buffer<T> _buffer;
 
-        public MongoLoader(MongoOptions options)
+        public MongoLoader(MongoLoaderOptions options)
         {
             _options = options;
             _collection = new MongoClient()

@@ -8,4 +8,8 @@
       <ProjectReference Include="..\Amaris.ETL.Abstract\Amaris.ETL.Abstract.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NLog" Version="4.5.10" />
+    </ItemGroup>
+
 </Project>

@@ -1,6 +1,6 @@
 namespace Amaris.ETL.Mongo
 {
-    public class MongoOptions
+    public class MongoLoaderOptions
     {
         public string ConnectionString { get; set; }
         public string Database { get; set; }
