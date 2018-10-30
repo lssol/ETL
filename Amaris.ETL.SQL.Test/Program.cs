@@ -16,6 +16,7 @@ namespace Amaris.ETL.SQL.Test
             var host = new HostBuilder()
                 .DefaultConfiguration(args)
                 .UseSQLExtractor<CandidateInput>()
+                .UseRabbitMQPipeline<CandidateInput, CandidateOutput>()
                 .AddHostedService<CandidateETL>()
                 .Build();
             host.Run();
